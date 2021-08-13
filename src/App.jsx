@@ -2,9 +2,9 @@ import {Route} from "react-router-dom";
 
 //HOC
 import DefaultHOC from "../src/HOC/Default.HOC";
+import Temp from "./components/Temp";
 
 //Components
-import Temp from "./components/temp";
 
 function App() {
   return (
