@@ -6,10 +6,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HeroCarousal = () => {
+
+    const settingsLG={
+    arrows:true,
+    autoplay:true,
+    centerMode:true,
+    centerPadding:"300px",
+    slidesToShow:1,
+    infinite: true,
+    slidesToScroll: 1
+    };
+
+
     const settings = {
         arrows:true,
-        centerMode:true,
-        centerPadding:"160px",
         dots: true,
         infinite: true,
         speed: 500,
@@ -23,11 +33,20 @@ const HeroCarousal = () => {
                     "https://images.unsplash.com/photo-1628542197835-d66a400ad71f?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60",
                     "https://images.unsplash.com/photo-1628542197835-d66a400ad71f?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"]
 return <>
-<HeroSlider {...settings}>
+  <div className="lg:hidden">
+  <HeroSlider {...settings}>
 {images.map((image) => (
-    <div className="w-20 h-80 "><img src={image} alt="Testing" className="w-full h-full "/></div>
+    <div className="w-full h-56 md:h-80 py-3 px-1"><img src={image} alt="Testing" className="w-full h-full rounded-md"/></div>
 ))}
 </HeroSlider>
+  </div>
+  <div className="hidden lg:block">
+  <HeroSlider {...settingsLG}>
+{images.map((image) => (
+    <div className="w-full h-96 px-2 py-3"><img src={image} alt="Testing" className="w-full h-full rounded-md"/></div>
+))}
+</HeroSlider>
+  </div>
 </>;
 };
 
