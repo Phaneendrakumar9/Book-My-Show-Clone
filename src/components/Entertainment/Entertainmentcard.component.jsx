@@ -26,7 +26,7 @@ const EntertainmentCardSlider = () => {
   const settings = {
     infinity: false,
     autoplay: false,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 4,
     InitialSlide: 0,
     responsive: [
